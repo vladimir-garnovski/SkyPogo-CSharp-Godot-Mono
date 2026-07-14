@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://ce3u2vqq3bc1h"]
+
+[ext_resource type="Script" uid="uid://6qshg1ju1csj" path="res://scenes/GameUI/GameUi.cs" id="1_nwnxj"]
+[ext_resource type="LabelSettings" uid="uid://cxpdebserihkk" path="res://resources/ScoreLabel.tres" id="1_yc8j6"]
+[ext_resource type="FontFile" uid="uid://dortrip8ldbaa" path="res://assets/fonts/TitanOne-Regular.ttf" id="2_qqu40"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nwnxj"]
+font = ExtResource("2_qqu40")
+font_size = 80
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_krvbs"]
+font = ExtResource("2_qqu40")
+font_size = 50
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameUI" type="Control" unique_id=541405413 node_paths=PackedStringArray("_gameOverRect", "_bestHeightLabel", "_heightLabel")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nwnxj")
+_gameOverRect = NodePath("GameOverRect")
+_bestHeightLabel = NodePath("MC/HighScoreLabel")
+_heightLabel = NodePath("MC/ScoreLabel")
+
+[node name="MC" type="MarginContainer" parent="." unique_id=925306517]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScoreLabel" type="Label" parent="MC" unique_id=752451438]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "0000"
+label_settings = ExtResource("1_yc8j6")
+
+[node name="HighScoreLabel" type="Label" parent="MC" unique_id=129329485]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Best: 0000"
+label_settings = ExtResource("1_yc8j6")
+horizontal_alignment = 2
+
+[node name="GameOverRect" type="ColorRect" parent="." unique_id=1128679470]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.22988582, 0.21339013, 0.39896044, 0.3019608)
+
+[node name="Label" type="Label" parent="GameOverRect" unique_id=1300113551]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.5
+offset_top = -28.0
+offset_right = 140.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_nwnxj")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="GameOverRect" unique_id=1817259391]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.5
+offset_top = -28.0
+offset_right = 140.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+
+
+Please 'R' to reload"
+label_settings = SubResource("LabelSettings_krvbs")
+horizontal_alignment = 1

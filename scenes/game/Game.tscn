@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b2yy3axurey8"]
+
+[ext_resource type="Texture2D" uid="uid://b8y1w08ilygfk" path="res://assets/free_-_skybox_cliffside_0.hdr" id="1_klkup"]
+[ext_resource type="PackedScene" uid="uid://cxouyjm7mm48d" path="res://scenes/spawner/Spawner.tscn" id="3_7qcb4"]
+[ext_resource type="PackedScene" uid="uid://dqnnk454pwolf" path="res://scenes/player/Player.tscn" id="3_vrspl"]
+[ext_resource type="PackedScene" uid="uid://dpkvrg2veswnk" path="res://scenes/playerCam/PlayerCam.tscn" id="4_7qcb4"]
+[ext_resource type="AudioStream" uid="uid://b06epusrpn0go" path="res://assets/audio/Arroz Con Pollo.mp3" id="5_lyhax"]
+[ext_resource type="PackedScene" uid="uid://ce3u2vqq3bc1h" path="res://scenes/GameUI/GameUI.tscn" id="6_365ku"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_m44fu"]
+panorama = ExtResource("1_klkup")
+energy_multiplier = 0.8
+
+[sub_resource type="Sky" id="Sky_klkup"]
+sky_material = SubResource("PanoramaSkyMaterial_m44fu")
+
+[sub_resource type="Environment" id="Environment_m44fu"]
+background_mode = 2
+sky = SubResource("Sky_klkup")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Game" type="Node" unique_id=1118342248]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1179357141]
+environment = SubResource("Environment_m44fu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=118529167]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=494377094 instance=ExtResource("3_vrspl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4974184, 0)
+
+[node name="PlayerCam" parent="." unique_id=1600755942 instance=ExtResource("4_7qcb4")]
+transform = Transform3D(1, 0, 0, 0, 0.87611324, 0.48210537, 0, -0.48210537, 0.87611324, 0, 16.678715, 13.324862)
+
+[node name="Spawner" parent="." unique_id=1462629050 instance=ExtResource("3_7qcb4")]
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=373813591]
+stream = ExtResource("5_lyhax")
+autoplay = true
+parameters/looping = true
+
+[node name="GameUI" parent="." unique_id=541405413 instance=ExtResource("6_365ku")]

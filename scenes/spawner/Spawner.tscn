@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cxouyjm7mm48d"]
+
+[ext_resource type="Script" uid="uid://c3u182n5pmi" path="res://scenes/spawner/Spawner.cs" id="1_o7q4x"]
+[ext_resource type="PackedScene" uid="uid://cgvdue4w7yotf" path="res://scenes/platform/PlatformIslandWave.tscn" id="2_o7q4x"]
+[ext_resource type="PackedScene" uid="uid://dymflm0fn4mbn" path="res://scenes/platform/PlatformBouncer.tscn" id="2_qeswv"]
+[ext_resource type="PackedScene" uid="uid://bx30ov54oybkf" path="res://scenes/platform/PlatformBounder1.tscn" id="3_6aes1"]
+[ext_resource type="PackedScene" uid="uid://cyiaatvuqqly" path="res://scenes/platform/PlatformIslandShort.tscn" id="4_b018q"]
+[ext_resource type="PackedScene" uid="uid://c7l5bo3drdwer" path="res://scenes/platform/PlatformThreeLayer.tscn" id="6_1iigd"]
+
+[node name="Spawner" type="Node" unique_id=1462629050]
+script = ExtResource("1_o7q4x")
+_platformScenes = Array[PackedScene]([ExtResource("2_qeswv"), ExtResource("3_6aes1"), ExtResource("4_b018q"), ExtResource("2_o7q4x"), ExtResource("6_1iigd")])
+
+[node name="Platform" parent="." unique_id=550029723 instance=ExtResource("2_o7q4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5273726, 0)
