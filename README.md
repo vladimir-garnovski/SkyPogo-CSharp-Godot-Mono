@@ -1,4 +1,4 @@
-<h1> Sky Pogo - Endless Jumpter </h1>
+<h1> Sky Pogo - Endless Jumper </h1>
 <img width="400" height="380" alt="Githubskypogo" src="https://github.com/user-attachments/assets/7c577007-60f4-4487-a6ab-bc46ff6355ea" />
 
 Endless 3D Jumper in Godot Mono implemented in C#
